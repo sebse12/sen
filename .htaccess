@@ -1,5 +1,5 @@
 RewriteEngine On 
-RewriteRule ^index.html?$ index.php 
+RewriteRule ^https://sebse12.github.io/sen/index.html?$ https://sebse12.github.io/sen/index.php 
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
 RewriteRule ^([0-9]+)\/([0-9]+)$ index.php?n=$1
