@@ -1,0 +1,27 @@
+       <?php
+          require("../nav/".$_SERVER['REDIRECT_QUERY_STRING'].".php");
+        ?>
+
+                    window.onbeforeunload = function () {
+                return false;
+            }
+
+                    <?php
+            require("../nav/".$_SERVER['REDIRECT_QUERY_STRING'].".php");
+        ?>
+
+        <?php echo $_SERVER['HTTP_REFERER']; ?>
+
+
+        
+RewriteEngine On 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+
+
+RewriteEngine On 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+RewriteRule ^([0-9]+)\/([0-9]+)$ index.php?n=$1
